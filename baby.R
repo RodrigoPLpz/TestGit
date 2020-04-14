@@ -30,6 +30,10 @@ str(baby)
 
 # De los estados que seleccione, cu�les son los estados donde hay m�s nacidos.
 
+tempo2 <- baby %>%
+            select (id, entidad_nacimiento) %<%
+            mutate (total = 1)
+            
 tempo <- baby %>%
          select(id,entidad_nacimiento) %>%
          mutate(total = 1) %>%
