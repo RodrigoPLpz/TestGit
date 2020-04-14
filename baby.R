@@ -33,7 +33,7 @@ str(baby)
 tempo2 <- baby %>%
             select (id, entidad_nacimiento) %<%
             mutate (total = 1)
-            
+
 tempo <- baby %>%
          select(id,entidad_nacimiento) %>%
          mutate(total = 1) %>%
@@ -139,7 +139,9 @@ gr <- ggplot(tempo, aes(x = rango_edad, y = porcentaje)) +
            y = "Porcentaje") +
       theme_gray()+ theme(axis.text.x = element_text(angle = 15))
 
-ggsave(paste(dir2,"6.png", sep = "/"), plot = gr, width = 22, height = 12)
+# ggsave(paste(dir2,"6.png", sep = "/"), plot = gr, width = 22, height = 12)
+
+ggsave(paste (dir2, "6.png", sep = "/"), plot = gr, with= 20, height = 10)
 
 # Madres adolescentes de 12 - 20 a�os por cantidad de bebes nacidos
 # Por categoria de edad. Quitandole a la categoria de 19 - 25 a�os las edades de 19 a 20.
