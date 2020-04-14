@@ -1,4 +1,4 @@
-# México ocupa el primer lugar en embarazo adolescente a nivel mundial. 
+# Mï¿½xico ocupa el primer lugar en embarazo adolescente a nivel mundial. 
 
 # Limpiamos espacio de trabajo.
 rm (list = ls())
@@ -27,21 +27,21 @@ baby <- read.csv(paste(dir1,"sinac2016DatosAbiertos.csv", sep = "/"), stringsAsF
 str(baby)
 nrow(baby) #2080253
 # Reducir dataset para la poblacion de estudio.
-# Un estado con menor indice de pobreza influye en un mayor número de mamás adolescentes.
-# Un estado con mayor desarrollo economico y mayor acceso a educación tiene un menor número de mamás adolescentes.
+# Un estado con menor indice de pobreza influye en un mayor nï¿½mero de mamï¿½s adolescentes.
+# Un estado con mayor desarrollo economico y mayor acceso a educaciï¿½n tiene un menor nï¿½mero de mamï¿½s adolescentes.
 # Seleccione tres estados con un indice de pobreza bajo y tres con un indice de pobreza alto.
-#### Estado de Méxcio = 49.6%
+#### Estado de Mï¿½xcio = 49.6%
 #### Yucatan = 41.9 %
 #### Queretaro = 31.1 % 
 #### CDMX = 28.4%
 #### Jalisco = 31.8 %
 #### Nuevo Leon = 20.4%
-# Por productividad. Trabajan y aportan dinero al país."NO ES LA MISMA CANTIDAD DE GENTE QUE VIVE EN ESOS ESTADOS"
+# Por productividad. Trabajan y aportan dinero al paï¿½s."NO ES LA MISMA CANTIDAD DE GENTE QUE VIVE EN ESOS ESTADOS"
 #### Queretaro
 #### Nuevo Leon
 #### Jalisco 
 #### CDMX
-#### Estado de Méxcio
+#### Estado de Mï¿½xcio
 #### Yucatan
 
 data <- select(baby,fecha_nac_madre:edad_madre,estado_conyugal:entidad_residencia_madre,numero_embarazos:hijos_sobrevivientes,
@@ -54,50 +54,50 @@ data <- select(baby,fecha_nac_madre:edad_madre,estado_conyugal:entidad_residenci
 str(data)
 nrow(data)
 tail(data)
-# UNION LIBRE - UNIÃ"N LIBRE
-data$estado_conyugal <- ifelse(data$estado_conyugal == "UNIÃ"N LIBRE","UNION LIBRE",data$estado_conyugal)
+# UNION LIBRE - UNIï¿½"N LIBRE
+data$estado_conyugal <- ifelse(data$estado_conyugal == "UNIï¿½"N LIBRE","UNION LIBRE",data$estado_conyugal)
 head(data$estado_conyugal,500)
 
-# UNICO - ÃsNICO
-data$producto_de_un_embarazo <- ifelse(data$producto_de_un_embarazo == "ÃsNICO","UNICO",data$producto_de_un_embarazo)
+# UNICO - ï¿½sNICO
+data$producto_de_un_embarazo <- ifelse(data$producto_de_un_embarazo == "ï¿½sNICO","UNICO",data$producto_de_un_embarazo)
 head(data$producto_de_un_embarazo,500)
 
 
-data$procedimiento_utilizado <- ifelse(data$procedimiento_utilizado == "EUTÃ"CICO","EUTOCICO",data$procedimiento_utilizado)
+data$procedimiento_utilizado <- ifelse(data$procedimiento_utilizado == "EUTï¿½"CICO","EUTOCICO",data$procedimiento_utilizado)
 head(data$procedimiento_utilizado,500)
 
-data$procedimiento_utilizado <- ifelse(data$procedimiento_utilizado == "CESÃ\u0081REA","CESAREA",data$procedimiento_utilizado)
+data$procedimiento_utilizado <- ifelse(data$procedimiento_utilizado == "CESï¿½\u0081REA","CESAREA",data$procedimiento_utilizado)
 head(data$procedimiento_utilizado,500)
 
 
-data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "UNIDAD MÃ???DICA PRIVADA","UD. MEDICA PRIVADA",data$lugar_de_nacimiento)
+data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "UNIDAD Mï¿½???DICA PRIVADA","UD. MEDICA PRIVADA",data$lugar_de_nacimiento)
 head(data$lugar_de_nacimiento,500)
 
 
-data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "SECRETARÃ\u008dA DE SALUD","SRIA. DE SALUD",data$lugar_de_nacimiento)
+data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "SECRETARï¿½\u008dA DE SALUD","SRIA. DE SALUD",data$lugar_de_nacimiento)
 head(data$lugar_de_nacimiento,500)
 
 
-data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "VÃ\u008dA PÃsBLICA","VIA PUBLICA",data$lugar_de_nacimiento)
+data$lugar_de_nacimiento <- ifelse(data$lugar_de_nacimiento == "Vï¿½\u008dA Pï¿½sBLICA","VIA PUBLICA",data$lugar_de_nacimiento)
 tail(data$lugar_de_nacimiento,500)
 
-data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "MÃ???DICO","MEDICO",data$quien_atendio_parto)
+data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "Mï¿½???DICO","MEDICO",data$quien_atendio_parto)
 head(data$quien_atendio_parto,500)
 
 
-data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "PERSONA AUTORIZADA POR LA SECRETARÃ\u008dA DE SALUD", "PER. AUT. SRIA. SALUD",data$quien_atendio_parto)
+data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "PERSONA AUTORIZADA POR LA SECRETARï¿½\u008dA DE SALUD", "PER. AUT. SRIA. SALUD",data$quien_atendio_parto)
 head(data$quien_atendio_parto,500)
 
 
-data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "PERSONA AUTORIZADA POR LA SECRETARÃ\u008dA DE SALUD", "PER. AUT. SRIA. SALUD",data$quien_atendio_parto)
+data$quien_atendio_parto <- ifelse(data$quien_atendio_parto == "PERSONA AUTORIZADA POR LA SECRETARï¿½\u008dA DE SALUD", "PER. AUT. SRIA. SALUD",data$quien_atendio_parto)
 select(data,quien_atendio_parto) %>%
   filter(quien_atendio_parto=="PER. AUT. SRIA. SALUD")
 
-data$ocupacion_habitual_madre <- ifelse(data$ocupacion_habitual_madre == "TRABAJADORES DE LA EDUCACIÃ"N", "SECT. EDUCACION",data$ocupacion_habitual_madre)
+data$ocupacion_habitual_madre <- ifelse(data$ocupacion_habitual_madre == "TRABAJADORES DE LA EDUCACIï¿½"N", "SECT. EDUCACION",data$ocupacion_habitual_madre)
 select(data,ocupacion_habitual_madre) %>%
   filter(ocupacion_habitual_madre=="SEC. EDUCACION")
 
-data$ocupacion_habitual_madre <- ifelse(data$ocupacion_habitual_madre == "EMPLEADOS DE SECTORES PÃsBLICO Y PRIVADO", "SECT. PUBLICO Y PRIVADO",data$ocupacion_habitual_madre)
+data$ocupacion_habitual_madre <- ifelse(data$ocupacion_habitual_madre == "EMPLEADOS DE SECTORES Pï¿½sBLICO Y PRIVADO", "SECT. PUBLICO Y PRIVADO",data$ocupacion_habitual_madre)
 select(data,ocupacion_habitual_madre) %>%
   filter(ocupacion_habitual_madre=="SECT. PUBLICO Y PRIVADO")
 
@@ -118,18 +118,18 @@ data <- data%>%
                                   ifelse(entidad_nacimiento == "NUEVO LEON",19,NA)))))))
 
 # Agregar rangos de edad segun ciclo de vida de un humano.
-# 10 - 11 años / niños  - entre 10 y 15 años comienza la mestruacion para la mayoria de las niñas
-# 12 - 18 años / adolescentes
-# 19 - 35 años / juventud
+# 10 - 11 aï¿½os / niï¿½os  - entre 10 y 15 aï¿½os comienza la mestruacion para la mayoria de las niï¿½as
+# 12 - 18 aï¿½os / adolescentes
+# 19 - 35 aï¿½os / juventud
 #### 19 - 25 / Preparatoria - Universidad
 #### 26 - 34 / Poder adquisitivo - Realizacion laboral
-# 35 - 50 años / madurez
+# 35 - 50 aï¿½os / madurez
 data <- data %>%
-        mutate(rango_edad = ifelse(edad_madre %in% 10:11, "10 - 11 años",
-                             ifelse(edad_madre %in% 12:18, "12 - 18 años",
-                              ifelse(edad_madre %in% 19:25, "19 - 25 años",
-                               ifelse(edad_madre %in% 26:34, "26 - 34 años",
-                                ifelse(edad_madre %in% 35:50, "35 - 50 años",NA))))))
+        mutate(rango_edad = ifelse(edad_madre %in% 10:11, "10 - 11 aï¿½os",
+                             ifelse(edad_madre %in% 12:18, "12 - 18 aï¿½os",
+                              ifelse(edad_madre %in% 19:25, "19 - 25 aï¿½os",
+                               ifelse(edad_madre %in% 26:34, "26 - 34 aï¿½os",
+                                ifelse(edad_madre %in% 35:50, "35 - 50 aï¿½os",NA))))))
 
 # Se encontraro datos erroneos al momento de la captura de las edades. Hay edades de 999. Las vamos a sustituir por NA.
 data$edad_madre <- ifelse(data$edad_madre>60,NA,data$edad_madre)
@@ -138,3 +138,7 @@ data[data$edad_madre>70,"edad_madre"]
 # Exportamos la base de estudio
 
 write.csv(data, paste(dir2, "daba.csv", sep="/"), row.names = F, fileEncoding = "UTF-8")
+
+suma <- 5+6
+resta <- 10-20
+multiplicaciÃ³n <- 2*5
